@@ -113,6 +113,8 @@ function renderChart() {
         renderLineChart(xColumn, yColumn);
     } else if (chartType === 'pie') {
         renderPieChart(xColumn, yColumn);
+    } else if (chartType === 'groupedBar') {
+        renderGroupedBarChart(xColumn); // Pass only xColumn for auto-grouping Ys
     }
     // Add more chart types here
 }
@@ -288,6 +290,58 @@ function renderPieChart(xCol, yCol) {
                 title: {
                     display: true,
                     text: `${yCol} Distribution by ${xCol}`
+                }
+            }
+        }
+    });
+}
+
+function renderGroupedBarChart(xCol) {
+    const canvas = document.getElementById('myChart');
+    canvas.style.display = 'block';
+    const ctx = canvas.getContext('2d');
+
+    const labels = rawData.map(d => d[xCol]);
+    const inpatientPhysicianData = rawData.map(d => parseFloat(d['Inpatient Physician'].replace('%', '')));
+    const outpatientPhysicianData = rawData.map(d => parseFloat(d['Outpatient Physician'].replace('%', '')));
+
+    currentChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Inpatient Physician',
+                    data: inpatientPhysicianData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Outpatient Physician',
+                    data: outpatientPhysicianData,
+                    backgroundColor: 'rgba(255, 159, 64, 0.6)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'category',
+                    title: { display: true, text: xCol }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'Physician Data' }
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: `Inpatient vs. Outpatient Physician by ${xCol}`
                 }
             }
         }
