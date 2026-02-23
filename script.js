@@ -1,5 +1,5 @@
 // Global variables to hold parsed data and chart instance
-let rawData = [];
+let rawData = []; // Stores the parsed data from CSV or JSON
 let currentChart = null;
 
 async function uploadFile() {
