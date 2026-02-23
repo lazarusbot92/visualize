@@ -123,7 +123,7 @@ function renderBarChart(xCol, yCol) {
     const ctx = canvas.getContext('2d');
 
     const labels = rawData.map(d => d[xCol]);
-    const dataValues = rawData.map(d => +d[yCol]); // Convert to number
+    const dataValues = rawData.map(d => parseFloat(d[yCol].replace('%', '')));
 
     currentChart = new Chart(ctx, {
         type: 'bar',
@@ -218,7 +218,7 @@ function renderLineChart(xCol, yCol) {
     const ctx = canvas.getContext('2d');
 
     const labels = rawData.map(d => d[xCol]);
-    const dataValues = rawData.map(d => +d[yCol]);
+    const dataValues = rawData.map(d => parseFloat(d[yCol].replace('%', '')));
 
     currentChart = new Chart(ctx, {
         type: 'line',
@@ -256,7 +256,7 @@ function renderPieChart(xCol, yCol) {
 
     // For a pie chart, xCol usually represents categories and yCol represents values
     const labels = rawData.map(d => d[xCol]);
-    const dataValues = rawData.map(d => +d[yCol]);
+    const dataValues = rawData.map(d => parseFloat(d[yCol].replace('%', '')));
 
     // Generate distinct colors for each slice
     const backgroundColors = dataValues.map(() => {

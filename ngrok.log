@@ -1,16 +1,14 @@
-t=2026-02-22T22:35:53-0600 lvl=info msg="no configuration paths supplied"
-t=2026-02-22T22:35:53-0600 lvl=info msg="using configuration at default config path" path="/Users/lazarusbot/Library/Application Support/ngrok/ngrok.yml"
-t=2026-02-22T22:35:53-0600 lvl=info msg="open config file" path="/Users/lazarusbot/Library/Application Support/ngrok/ngrok.yml" err=nil
-t=2026-02-22T22:35:53-0600 lvl=info msg="FIPS 140 mode" enabled=false
-t=2026-02-22T22:35:53-0600 lvl=eror msg="unable to check host info" obj=tunnels.session err="getting host ID: exec: \"ioreg\": executable file not found in $PATH"
-t=2026-02-22T22:35:53-0600 lvl=eror msg="unable to check ComputerName" obj=tunnels.session err="exec: \"scutil\": executable file not found in $PATH"
-t=2026-02-22T22:35:53-0600 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
-t=2026-02-22T22:35:53-0600 lvl=info msg="client session established" obj=tunnels.session
-t=2026-02-22T22:35:53-0600 lvl=info msg="tunnel session started" obj=tunnels.session
-t=2026-02-22T22:35:53-0600 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:3000 url=https://serenity-uncapsized-hootingly.ngrok-free.dev
-t=2026-02-22T22:36:01-0600 lvl=info msg="join connections" obj=join id=3771f0a5654e l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64241
-t=2026-02-22T22:36:01-0600 lvl=info msg="join connections" obj=join id=23f37f014af0 l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64241
-t=2026-02-22T22:36:13-0600 lvl=info msg="join connections" obj=join id=4c94dfb6a2ce l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64241
-t=2026-02-22T22:37:51-0600 lvl=info msg="join connections" obj=join id=f19c1d2df001 l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64241
-t=2026-02-22T22:37:51-0600 lvl=info msg="join connections" obj=join id=954f288a8fe4 l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64241
-t=2026-02-22T22:38:02-0600 lvl=info msg="join connections" obj=join id=11079ba947d9 l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64241
+t=2026-02-22T22:38:48-0600 lvl=info msg="no configuration paths supplied"
+t=2026-02-22T22:38:48-0600 lvl=info msg="using configuration at default config path" path="/Users/lazarusbot/Library/Application Support/ngrok/ngrok.yml"
+t=2026-02-22T22:38:48-0600 lvl=info msg="open config file" path="/Users/lazarusbot/Library/Application Support/ngrok/ngrok.yml" err=nil
+t=2026-02-22T22:38:48-0600 lvl=info msg="FIPS 140 mode" enabled=false
+t=2026-02-22T22:38:48-0600 lvl=eror msg="unable to check host info" obj=tunnels.session err="getting host ID: exec: \"ioreg\": executable file not found in $PATH"
+t=2026-02-22T22:38:48-0600 lvl=eror msg="unable to check ComputerName" obj=tunnels.session err="exec: \"scutil\": executable file not found in $PATH"
+t=2026-02-22T22:38:48-0600 lvl=info msg="starting web service" obj=web addr=127.0.0.1:4040 allow_hosts=[]
+t=2026-02-22T22:38:49-0600 lvl=info msg="client session established" obj=tunnels.session
+t=2026-02-22T22:38:49-0600 lvl=info msg="tunnel session started" obj=tunnels.session
+t=2026-02-22T22:38:49-0600 lvl=info msg="started tunnel" obj=tunnels name=command_line addr=http://localhost:3000 url=https://serenity-uncapsized-hootingly.ngrok-free.dev
+t=2026-02-22T22:38:57-0600 lvl=info msg="join connections" obj=join id=8b8ed8b20ebf l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64828
+t=2026-02-22T22:38:58-0600 lvl=info msg="join connections" obj=join id=5c920a90f717 l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64828
+t=2026-02-22T22:40:02-0600 lvl=info msg="join connections" obj=join id=a4cfd6bd8bf7 l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64828
+t=2026-02-22T22:40:18-0600 lvl=info msg="join connections" obj=join id=ea659498c8d6 l=[::1]:3000 r=[2806:2f0:96c1:f727:f468:41da:20fd:ceb4]:64828
