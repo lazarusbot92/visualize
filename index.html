@@ -6,23 +6,13 @@
     <title>Data Visualizer</title>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-    <style>
-        body { font-family: sans-serif; margin: 20px; }
-        #app { max-width: 900px; margin: auto; }
-        .input-section, .chart-section { margin-bottom: 20px; padding: 15px; border: 1px solid #eee; border-radius: 8px; }
-        input[type="file"] { margin-right: 10px; }
-        button { padding: 8px 15px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        button:hover { background-color: #0056b3; }
-        canvas { border: 1px solid #ccc; max-width: 100%; height: auto; }
-        .controls label { margin-right: 15px; }
-        .controls select { margin-right: 15px; padding: 5px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <h1>Universal Data Visualizer</h1>
 
-        <div class="input-section">
+        <div class="input-section" style="display: flex; align-items: center;">
             <input type="file" id="dataFile" accept=".csv, .json">
             <button onclick="uploadFile()">Upload Data</button>
         </div>
