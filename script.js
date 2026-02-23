@@ -109,6 +109,10 @@ function renderChart() {
         renderBarChart(xColumn, yColumn);
     } else if (chartType === 'scatter') {
         renderScatterPlot(xColumn, yColumn);
+    } else if (chartType === 'line') {
+        renderLineChart(xColumn, yColumn);
+    } else if (chartType === 'pie') {
+        renderPieChart(xColumn, yColumn);
     }
     // Add more chart types here
 }
@@ -206,6 +210,88 @@ function renderScatterPlot(xCol, yCol) {
         .attr("r", 5)
         .attr("fill", "steelblue")
         .attr("opacity", 0.7);
+}
+
+function renderLineChart(xCol, yCol) {
+    const canvas = document.getElementById('myChart');
+    canvas.style.display = 'block';
+    const ctx = canvas.getContext('2d');
+
+    const labels = rawData.map(d => d[xCol]);
+    const dataValues = rawData.map(d => +d[yCol]);
+
+    currentChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: `${yCol} over ${xCol}`,
+                data: dataValues,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                fill: true,
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    type: 'category',
+                    title: { display: true, text: xCol }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: yCol }
+                }
+            }
+        }
+    });
+}
+
+function renderPieChart(xCol, yCol) {
+    const canvas = document.getElementById('myChart');
+    canvas.style.display = 'block';
+    const ctx = canvas.getContext('2d');
+
+    // For a pie chart, xCol usually represents categories and yCol represents values
+    const labels = rawData.map(d => d[xCol]);
+    const dataValues = rawData.map(d => +d[yCol]);
+
+    // Generate distinct colors for each slice
+    const backgroundColors = dataValues.map(() => {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        return `rgba(${r}, ${g}, ${b}, 0.7)`;
+    });
+    const borderColors = backgroundColors.map(color => color.replace('0.7', '1'));
+
+    currentChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: yCol,
+                data: dataValues,
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: `${yCol} Distribution by ${xCol}`
+                }
+            }
+        }
+    });
 }
 
 // Initial render if data is somehow pre-loaded (not expected for this app but good practice)
