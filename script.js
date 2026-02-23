@@ -1,6 +1,6 @@
 // Global variables to hold parsed data and chart instance
 let rawData = []; // Stores the parsed data from CSV or JSON
-let currentChart = null;
+let currentChart = null; // Holds the Chart.js instance or D3.js SVG for current visualization
 
 async function uploadFile() {
     const fileInput = document.getElementById('dataFile');
